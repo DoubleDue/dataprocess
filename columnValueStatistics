@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+
+import numpy as np
+import pandas
+import matplotlib.pyplot as plt
+
+#read data
+df = pandas.read_csv("/data/tendata/milliondata/test1.csv",error_bad_lines=False,sep='#')
+#print data_mergeall.describe()
+
+#get the value by column name
+columnValue =  df['fseq_no']
+#columnValue = df.ix[:,1]
+
+#count
+pair = columnValue.value_counts()
+#排序
+print pair.sort_index()
+pair.to_csv("/data/tendata/milliondata/processed/columnValue_test1_1.csv",index=True,header=False)
